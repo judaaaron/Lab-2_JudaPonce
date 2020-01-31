@@ -12,12 +12,16 @@ public class Personajes {
     private int anios;
     private String descripcion;
     private String nacionalidad;
+    private int HP;
+    private int CS;
+    private int AC;
+    private int DG;
 
     public Personajes() {
     }
 
-    public Personajes(String personaje,String nombre, String raza, Double estatura, Double peso, int anios, String descripcion, String nacionalidad) {
-        this.personaje=personaje;
+    public Personajes(String personaje, String nombre, String raza, Double estatura, Double peso, int anios, String descripcion, String nacionalidad, int HP, int CS, int AC, int DG) {
+        this.personaje = personaje;
         this.nombre = nombre;
         this.raza = raza;
         this.estatura = estatura;
@@ -25,6 +29,10 @@ public class Personajes {
         this.anios = anios;
         this.descripcion = descripcion;
         this.nacionalidad = nacionalidad;
+        this.HP = HP;
+        this.CS = CS;
+        this.AC = AC;
+        this.DG = DG;
     }
 
     public String getPersonaje() {
@@ -62,7 +70,6 @@ public class Personajes {
     public void setPersonaje(String personaje) {
         this.personaje = personaje;
     }
-    
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -91,11 +98,11 @@ public class Personajes {
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
     }
-    
-     @Override
+
+    @Override
     public String toString() {
 
-        return " " + " Personaje= " + personaje + "||   nombre = " + nombre + "||    Raza = " + raza + "||    Estatura = " + estatura + "||    peso = " + peso + "||    edad = " + anios + "||    Descripcion = " + descripcion + "||    Nacionalidad = " + nacionalidad;
+        return " " + " Personaje= " + personaje + "||  nombre = " + nombre + "||  Raza = " + raza + "||  Estatura = " + estatura + "||  peso = " + peso + "||  edad = " + anios + "||  Descripcion = " + descripcion + "||  Nacionalidad = " + nacionalidad + "|| Hit points = " + HP + "||  Cistric Strike = " + CS + "||  Armor Class= " + AC + "||  Damage = " + DG;
     }
 
 }

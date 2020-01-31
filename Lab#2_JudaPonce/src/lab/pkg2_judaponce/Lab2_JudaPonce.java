@@ -11,10 +11,10 @@ public class Lab2_JudaPonce {
     static Scanner leer = new Scanner(System.in);
 
     public static void main(String[] args) {
-        personajes.add(new Personajes("Clerigo", "Juda", "humano", 1.79, 86.5, 20, "fortaleza", "Norfair"));
-        personajes.add(new Personajes("Picaro", "Paulina", "enano", 1.65, 70.5, 18, "inteligencia", "Zebes"));
-        personajes.add(new Personajes("Barbaro", "David", "elfo", 1.69, 78.2, 108, "audaz guerreo", "Brinstar"));
-        personajes.add(new Personajes("Mago", "Sebastian", "mediano", 2.00, 155.5, 182, "Altura", "Maridia"));
+        personajes.add(new Personajes("Clerigo", "Juda", "humano", 1.79, 86.5, 20, "fortaleza", "Norfair", 75, 97, 40, 15));
+        personajes.add(new Personajes("Picaro", "Paulina", "enano", 1.65, 70.5, 18, "inteligencia", "Zebes", 100, 80, 50, 25));
+        personajes.add(new Personajes("Barbaro", "David", "elfo", 1.69, 78.2, 108, "audaz guerreo", "Brinstar", 70, 93, 65, 30));
+        personajes.add(new Personajes("Mago", "Sebastian", "mediano", 2.00, 155.5, 182, "Altura", "Maridia", 60, 101, 20, 25));
         char resp = 's';
         while (resp == 's' || resp == 'S') {
             System.out.println("       Menu de juego");
@@ -27,6 +27,10 @@ public class Lab2_JudaPonce {
             int opcion = leer.nextInt();
             switch (opcion) {
                 case 1:
+                    int HP = 0,
+                     CS = 0,
+                     AC = 0,
+                     DG = 0;
                     String personajjes = "";
                     String raza = "";
                     String nacionalidad = "";
@@ -37,26 +41,45 @@ public class Lab2_JudaPonce {
                     System.out.println(" 3. mago ");
                     System.out.println(" 4. picaro");
                     int op = leer.nextInt();
-                    switch (op) {
-                        case 1:
-                            personajjes = "Clerigo";
-                            break;
+                
 
-                        case 2:
-                            personajjes = "Barbaro";
-                            break;
+                        switch (op) {
 
-                        case 3:
-                            personajjes = "Mago";
-                            break;
+                            case 1:
+                                personajjes = "Clerigo";
+                                CS = 97;
+                                AC = 40;
+                                DG = 5 + R.nextInt(15);
 
-                        case 4:
-                            personajjes = "Picaro";
-                            break;
-                        default:
-                            System.out.println(" Opcion incorrecta");
-                            System.out.println();
-                    }
+                                break;
+
+                            case 2:
+                                personajjes = "Barbaro";
+                                CS = 93;
+                                AC = 65;
+                                DG = 15 + R.nextInt(30);
+                                break;
+
+                            case 3:
+                                personajjes = "Mago";
+                                CS = 101;
+                                AC = 20;
+                                DG = 5 + R.nextInt(10);
+                                break;
+
+                            case 4:
+                                personajjes = "Picaro";
+                                CS = 80;
+                                AC = 50;
+                                DG = 15 + R.nextInt(25);
+                                break;
+                            default:
+                                System.out.println(" Opcion incorrecta");
+                                System.out.println();
+                                break;
+
+                        }
+                    
 
                     System.out.print(" Ingrese nombre: ");
                     String nombre = leer.next();
@@ -69,19 +92,23 @@ public class Lab2_JudaPonce {
                     switch (opp) {
                         case 1:
                             raza = " Mediano ";
+                            HP = 50 + R.nextInt(60);
                             break;
 
                         case 2:
                             raza = " Enano ";
+                            HP = 80 + R.nextInt(100);
                             break;
 
                         case 3:
-
                             raza = " Elfo ";
+                            HP = 50 + R.nextInt(70);
+
                             break;
 
                         case 4:
                             raza = " Humano ";
+                            HP = 40 + R.nextInt(75);
                             break;
                         default:
                             System.out.println(" Opcion incorrecta");
@@ -128,18 +155,11 @@ public class Lab2_JudaPonce {
                             System.out.println();
                     }
 
-                    personajes.add(new Personajes(personajjes, nombre, raza, estatura, peso, edad, descripcion, nacionalidad));
+                    personajes.add(new Personajes(personajjes, nombre, raza, estatura, peso, edad, descripcion, nacionalidad, HP, CS, AC, DG));
                     System.out.println("       Listado de Personajes ");
                     String salida = "";
 
-                    for (Object o : personajes) {
-                        if (o instanceof Personajes) {
-                            salida += " [" + personajes.indexOf(o) + "] " + o + "\n";
-
-                        }
-
-                    }
-                    System.out.println(salida);
+                    System.out.println(personajes.get(personajes.size() - 1));
 
                     break;
 
