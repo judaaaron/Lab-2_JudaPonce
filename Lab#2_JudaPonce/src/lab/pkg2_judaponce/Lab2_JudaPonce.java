@@ -95,11 +95,11 @@ public class Lab2_JudaPonce {
                     System.out.println(" 1. Tipo de personaje");
                     System.out.println(" 2. Nombre del personaje");
                     System.out.println(" 3. Raza del personaje");
-                    System.out.println(" 5. Estatura del personaje");
-                    System.out.println(" 6. Peso del personaje");
-                    System.out.println(" 7. Edad del personaje");
-                    System.out.println(" 8. Descripcion del personaje");
-                    System.out.println(" 9. Nacionalidad del personaje");
+                    System.out.println(" 4. Estatura del personaje");
+                    System.out.println(" 5. Peso del personaje");
+                    System.out.println(" 6. Edad del personaje");
+                    System.out.println(" 7. Descripcion del personaje");
+                    System.out.println(" 8. Nacionalidad del personaje");
                     int option = leer.nextInt();
                     switch (option) {
                         case 1:
@@ -121,8 +121,124 @@ public class Lab2_JudaPonce {
                                 System.out.println(" Error al modificar");
                             }
                             break;
+
+                        case 2:
+                            System.out.println(" Opcion modificar: Nombre de personaje");
+                            String newNombre;
+                            System.out.print(" Ingrese posicion donde desea modificar: ");
+                            int posicio = leer.nextInt();
+
+                            if (personajes.get(posicio) instanceof Personajes) {
+                                System.out.print(" Ingrese nueva raza de personaje: ");
+                                newNombre = leer.next();
+                                System.out.println();
+                                ((Personajes) personajes.get(posicio)).setNombre(newNombre);
+                                System.out.println(" Nombre de personaje ha sido modificado con exito");
+                                System.out.println("");
+
+                            } else {
+                                System.out.println(" Error al modificar");
+                            }
+
+                            break;
+
+                        case 3:
+                            System.out.println(" Opcion modificar: Raza de personaje");
+                            String newRaza;
+                            System.out.print(" Ingrese posicion donde desea modificar: ");
+                            int posici = leer.nextInt();
+
+                            if (personajes.get(posici) instanceof Personajes) {
+                                System.out.print(" Ingrese nueva estatura de personaje: ");
+                                newRaza = leer.next();
+                                System.out.println();
+                                ((Personajes) personajes.get(posici)).setRaza(newRaza);
+                                System.out.println(" Raza de personaje ha sido modificado con exito");
+                                System.out.println("");
+
+                            } else {
+                                System.out.println(" Error al modificar");
+                            }
+
+                            break;
+
+                        case 4:
+                            System.out.println(" Opcion modificar: Estatura de personaje");
+                            Double newEstatura;
+                            System.out.print(" Ingrese posicion donde desea modificar: ");
+                            int posic = leer.nextInt();
+                            if (personajes.get(posic) instanceof Personajes) {
+                                System.out.print(" Ingrese nuevo tipo de personaje: ");
+                                newEstatura = leer.nextDouble();
+                                System.out.println();
+                                ((Personajes) personajes.get(posic)).setEstatura(newEstatura);
+                                System.out.println(" Estatura de personaje ha sido modificado con exito");
+                                System.out.println("");
+
+                            } else {
+                                System.out.println(" Error al modificar");
+                            }
+                            break;
+
+                        case 5:
+                            System.out.println(" Opcion modificar: Estatura de personaje");
+                            Double newPeso;
+                            System.out.print(" Ingrese posicion donde desea modificar: ");
+                            int posi = leer.nextInt();
+                            if (personajes.get(posi) instanceof Personajes) {
+                                System.out.print(" Ingrese nuevo peso de personaje: ");
+                                newPeso = leer.nextDouble();
+                                System.out.println();
+                                ((Personajes) personajes.get(posi)).setPeso(newPeso);
+                                System.out.println(" Peso de personaje ha sido modificado con exito");
+                                System.out.println("");
+
+                            } else {
+                                System.out.println(" Error al modificar");
+                            }
+
+                            break;
+
+                        case 6:
+                            System.out.println(" Opcion modificar: Edad de personaje");
+                            int newEdad;
+                            System.out.print(" Ingrese posicion donde desea modificar: ");
+                            int pos = leer.nextInt();
+                            if (personajes.get(pos) instanceof Personajes) {
+                                System.out.print(" Ingrese nueva edad de personaje: ");
+                                newEdad = leer.nextInt();
+                                System.out.println();
+                                ((Personajes) personajes.get(pos)).setAnios(newEdad);
+                                System.out.println(" Edad de personaje ha sido modificado con exito");
+                                System.out.println("");
+
+                            } else {
+                                System.out.println(" Error al modificar");
+                            }
+
+                            break;
+                            
+                        case 7:
+                            System.out.println(" Opcion modificar: Descripcion de personaje");
+                            String newDescripcion;
+                            System.out.print(" Ingrese posicion donde desea modificar: ");
+                            int position = leer.nextInt();
+                            if (personajes.get(position) instanceof Personajes) {
+                                System.out.print(" Ingrese nueva descripcion de personaje: ");
+                                newDescripcion=leer.nextLine();
+                                leer.nextLine();
+                                System.out.println();
+                                ((Personajes) personajes.get(position)).setDescripcion(newDescripcion);
+                                System.out.println(" Descripcion de personaje ha sido modificado con exito");
+                                System.out.println("");
+
+                            } else {
+                                System.out.println(" Error al modificar");
+                            }
+                            
+                            break;
                         default:
-                            throw new AssertionError();
+                            System.out.println(" Opcion Incorrecta");
                     }
                     break;
 
