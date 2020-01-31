@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Personajes {
 
-    String personaje;
-    String nombre;
-    String raza;
-    Double estatura;
-    Double peso;
-    int anios;
-    String descripcion;
-    String nacionalidad;
+    private String personaje;
+    private String nombre;
+    private String raza;
+    private Double estatura;
+    private Double peso;
+    private int anios;
+    private String descripcion;
+    private String nacionalidad;
 
     public Personajes() {
     }
@@ -95,7 +95,7 @@ public class Personajes {
      @Override
     public String toString() {
 
-        return " "+ " Personaje= " + personaje + " || nombre = " + nombre + "|| Raza = " + raza + "|| Estatura = " + estatura + "|| peso = " + peso + "|| edad = " + anios + "|| Descripcion = " + descripcion + "|| Nacionalidad = " + nacionalidad;
+        return " " + " Personaje= " + personaje + "||   nombre = " + nombre + "||    Raza = " + raza + "||    Estatura = " + estatura + "||    peso = " + peso + "||    edad = " + anios + "||    Descripcion = " + descripcion + "||    Nacionalidad = " + nacionalidad;
     }
 
 }

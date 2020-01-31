@@ -11,10 +11,10 @@ public class Lab2_JudaPonce {
     static Scanner leer = new Scanner(System.in);
 
     public static void main(String[] args) {
-        personajes.add(new Personajes("clerigo", "Juda", "humano", 1.79, 86.5, 20, "fortaleza", "Norfair"));
-        personajes.add(new Personajes("picaro", "Paulina", "enano", 1.65, 70.5, 18, "inteligencia", "Zebes"));
-        personajes.add(new Personajes("barbaro", "David", "elfo", 1.69, 78.2, 108, "comida", "Brinstar"));
-        personajes.add(new Personajes("mago", "Sebastian", "mediano", 2.00, 155.5, 182, "Altura", "Maridia"));
+        personajes.add(new Personajes("Clerigo", "Juda", "humano", 1.79, 86.5, 20, "fortaleza", "Norfair"));
+        personajes.add(new Personajes("Picaro", "Paulina", "enano", 1.65, 70.5, 18, "inteligencia", "Zebes"));
+        personajes.add(new Personajes("Barbaro", "David", "elfo", 1.69, 78.2, 108, "audaz guerreo", "Brinstar"));
+        personajes.add(new Personajes("Mago", "Sebastian", "mediano", 2.00, 155.5, 182, "Altura", "Maridia"));
         char resp = 's';
         while (resp == 's' || resp == 'S') {
             System.out.println("       Menu de juego");
@@ -27,21 +27,67 @@ public class Lab2_JudaPonce {
             int opcion = leer.nextInt();
             switch (opcion) {
                 case 1:
+                    String personajjes = "";
+                    String raza = "";
+                    String nacionalidad = "";
                     System.out.println("         Bienvenido, Por favor registre personajes en los siguientes campos");
                     System.out.println(" Escoja Personaje");
-                    System.out.println(" clerigo");
-                    System.out.println(" barbaro");
-                    System.out.println(" mago ");
-                    System.out.println(" picaro");
-                    String personajjes = leer.next();
+                    System.out.println(" 1. clerigo");
+                    System.out.println(" 2. barbaro");
+                    System.out.println(" 3. mago ");
+                    System.out.println(" 4. picaro");
+                    int op = leer.nextInt();
+                    switch (op) {
+                        case 1:
+                            personajjes = "Clerigo";
+                            break;
+
+                        case 2:
+                            personajjes = "Barbaro";
+                            break;
+
+                        case 3:
+                            personajjes = "Mago";
+                            break;
+
+                        case 4:
+                            personajjes = "Picaro";
+                            break;
+                        default:
+                            System.out.println(" Opcion incorrecta");
+                            System.out.println();
+                    }
+
                     System.out.print(" Ingrese nombre: ");
                     String nombre = leer.next();
                     System.out.println(" Seleccione Raza: ");
-                    System.out.println(" mediano");
-                    System.out.println(" enano");
-                    System.out.println(" elfo");
-                    System.out.println(" humano");
-                    String raza = leer.next();
+                    System.out.println(" 1. Mediano");
+                    System.out.println(" 2. Eano");
+                    System.out.println(" 3. Efo");
+                    System.out.println(" 4. Humano");
+                    int opp = leer.nextInt();
+                    switch (opp) {
+                        case 1:
+                            raza = " Mediano ";
+                            break;
+
+                        case 2:
+                            raza = " Enano ";
+                            break;
+
+                        case 3:
+
+                            raza = " Elfo ";
+                            break;
+
+                        case 4:
+                            raza = " Humano ";
+                            break;
+                        default:
+                            System.out.println(" Opcion incorrecta");
+                            System.out.println();
+                    }
+
                     System.out.print(" Ingrese estura: ");
                     double estatura = leer.nextDouble();
                     System.out.print(" Ingrese peso: ");
@@ -49,14 +95,39 @@ public class Lab2_JudaPonce {
                     System.out.print(" Ingrese edad: ");
                     int edad = leer.nextInt();
                     System.out.print(" Ingrese descripcion: ");
-                    String descripcion = leer.next();
+                    String descripcion = leer.nextLine();
+                    leer.nextLine();
                     System.out.println(" Ingrese nacionalidad: ");
-                    System.out.println(" Norfair");
-                    System.out.println(" Brinstar");
-                    System.out.println(" Maridia");
-                    System.out.println(" Zebes ");
-                    System.out.println(" Crateria");
-                    String nacionalidad = leer.next();
+                    System.out.println(" 1. Norfair");
+                    System.out.println(" 2. Brinstar");
+                    System.out.println(" 3. Maridia");
+                    System.out.println(" 4. Zebes ");
+                    System.out.println(" 5. Crateria");
+                    int optionn = leer.nextInt();
+                    switch (optionn) {
+                        case 1:
+                            nacionalidad = " Nosfair";
+                            break;
+
+                        case 2:
+                            nacionalidad = " Brinstar";
+                            break;
+
+                        case 3:
+                            nacionalidad = " Meridia";
+                            break;
+                        case 4:
+                            nacionalidad = " Zebes";
+                            break;
+
+                        case 5:
+                            nacionalidad = " Crateria";
+                            break;
+                        default:
+                            System.out.println(" Opcion Incorrecta");
+                            System.out.println();
+                    }
+
                     personajes.add(new Personajes(personajjes, nombre, raza, estatura, peso, edad, descripcion, nacionalidad));
                     System.out.println("       Listado de Personajes ");
                     String salida = "";
@@ -217,7 +288,7 @@ public class Lab2_JudaPonce {
                             }
 
                             break;
-                            
+
                         case 7:
                             System.out.println(" Opcion modificar: Descripcion de personaje");
                             String newDescripcion;
@@ -225,7 +296,7 @@ public class Lab2_JudaPonce {
                             int position = leer.nextInt();
                             if (personajes.get(position) instanceof Personajes) {
                                 System.out.print(" Ingrese nueva descripcion de personaje: ");
-                                newDescripcion=leer.nextLine();
+                                newDescripcion = leer.nextLine();
                                 leer.nextLine();
                                 System.out.println();
                                 ((Personajes) personajes.get(position)).setDescripcion(newDescripcion);
@@ -235,7 +306,26 @@ public class Lab2_JudaPonce {
                             } else {
                                 System.out.println(" Error al modificar");
                             }
-                            
+
+                            break;
+
+                        case 8:
+                            System.out.println(" Opcion modificar: Ncionalidad de personaje");
+                            String newNacionalidad;
+                            System.out.print(" Ingrese posicion donde desea modificar: ");
+                            int positionn = leer.nextInt();
+                            if (personajes.get(positionn) instanceof Personajes) {
+                                System.out.print(" Ingrese nueva nacionalidad de personaje: ");
+                                newNacionalidad = leer.next();
+                                System.out.println();
+                                ((Personajes) personajes.get(positionn)).setNacionalidad(newNacionalidad);
+                                System.out.println(" Nacionalidad de personaje ha sido modificado con exito");
+                                System.out.println("");
+
+                            } else {
+                                System.out.println(" Error al modificar");
+                            }
+
                             break;
                         default:
                             System.out.println(" Opcion Incorrecta");
