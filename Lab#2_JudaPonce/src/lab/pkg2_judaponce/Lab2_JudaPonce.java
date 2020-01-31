@@ -11,6 +11,10 @@ public class Lab2_JudaPonce {
     static Scanner leer = new Scanner(System.in);
 
     public static void main(String[] args) {
+        personajes.add(new Personajes("clerigo", "Juda", "humano", 1.79, 86.5, 20, "fortaleza", "Norfair"));
+        personajes.add(new Personajes("picaro", "Paulina", "enano", 1.65, 70.5, 18, "inteligencia", "Zebes"));
+        personajes.add(new Personajes("barbaro", "David", "elfo", 1.69, 78.2, 108, "comida", "Brinstar"));
+        personajes.add(new Personajes("mago", "Sebastian", "mediano", 2.00, 155.5, 182, "Altura", "Maridia"));
         char resp = 's';
         while (resp == 's' || resp == 'S') {
             System.out.println("       Menu de juego");
@@ -46,7 +50,7 @@ public class Lab2_JudaPonce {
                     int edad = leer.nextInt();
                     System.out.print(" Ingrese descripcion: ");
                     String descripcion = leer.next();
-                    System.out.print(" Ingrese nacionalidad: ");
+                    System.out.println(" Ingrese nacionalidad: ");
                     System.out.println(" Norfair");
                     System.out.println(" Brinstar");
                     System.out.println(" Maridia");
@@ -123,6 +127,11 @@ public class Lab2_JudaPonce {
                     break;
 
                 case 3:
+                    if (personajes.isEmpty()) {
+                        System.out.println(" No hay personajes registrados hasta el momento");
+                        System.out.println();
+                        break;
+                    }
                     System.out.println("       Listado de Personajes ");
                     String salidass = "";
 
@@ -134,6 +143,21 @@ public class Lab2_JudaPonce {
 
                     }
                     System.out.println(salidass);
+
+                    break;
+
+                case 4:
+                    if (personajes.isEmpty()) {
+                        System.out.println(" No hay personajes registrados hasta el momento");
+                        System.out.println();
+                        break;
+                    }
+                    int posicion;
+                    System.out.print(" Ingrese posicion para eliminar personaje: ");
+                    posicion = leer.nextInt();
+                    personajes.remove(posicion);
+                    System.out.println(" Personaje eliminado con exito ");
+                    System.out.println();
 
                     break;
                 default:
