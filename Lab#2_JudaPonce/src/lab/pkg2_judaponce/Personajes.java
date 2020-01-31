@@ -123,6 +123,22 @@ public class Personajes {
     public int getDG() {
         return DG;
     }
+
+    public void setHP(int HP) {
+        this.HP = HP;
+    }
+
+    public void setCS(int CS) {
+        this.CS = CS;
+    }
+
+    public void setAC(int AC) {
+        this.AC = AC;
+    }
+
+    public void setDG(int DG) {
+        this.DG = DG;
+    }
     
     
 
