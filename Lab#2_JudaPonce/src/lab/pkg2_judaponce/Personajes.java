@@ -35,6 +35,15 @@ public class Personajes {
         this.DG = DG;
     }
 
+    public Personajes(int HP, int CS, int AC, int DG) {
+        this.HP = HP;
+        this.CS = CS;
+        this.AC = AC;
+        this.DG = DG;
+    }
+    
+    
+
     public String getPersonaje() {
         return personaje;
     }
@@ -99,10 +108,34 @@ public class Personajes {
         this.nacionalidad = nacionalidad;
     }
 
+    public int getHP() {
+        return HP;
+    }
+
+    public int getCS() {
+        return CS;
+    }
+
+    public int getAC() {
+        return AC;
+    }
+
+    public int getDG() {
+        return DG;
+    }
+    
+    
+
     @Override
     public String toString() {
 
         return " " + " Personaje= " + personaje + "||  nombre = " + nombre + "||  Raza = " + raza + "||  Estatura = " + estatura + "||  peso = " + peso + "||  edad = " + anios + "||  Descripcion = " + descripcion + "||  Nacionalidad = " + nacionalidad + "|| Hit points = " + HP + "||  Cistric Strike = " + CS + "||  Armor Class= " + AC + "||  Damage = " + DG;
     }
+    
+     public String toStringg() {
+
+        return " " +" Hit points = " + HP + "||  Cistric Strike = " + CS + "||  Armor Class= " + AC + "||  Damage = " + DG;
+    }
+     
 
 }

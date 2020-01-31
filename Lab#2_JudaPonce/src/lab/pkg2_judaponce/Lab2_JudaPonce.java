@@ -41,45 +41,43 @@ public class Lab2_JudaPonce {
                     System.out.println(" 3. mago ");
                     System.out.println(" 4. picaro");
                     int op = leer.nextInt();
-                
 
-                        switch (op) {
+                    switch (op) {
 
-                            case 1:
-                                personajjes = "Clerigo";
-                                CS = 97;
-                                AC = 40;
-                                DG = 5 + R.nextInt(15);
+                        case 1:
+                            personajjes = "Clerigo";
+                            CS = 97;
+                            AC = 40;
+                            DG = 5 + R.nextInt(15);
 
-                                break;
+                            break;
 
-                            case 2:
-                                personajjes = "Barbaro";
-                                CS = 93;
-                                AC = 65;
-                                DG = 15 + R.nextInt(30);
-                                break;
+                        case 2:
+                            personajjes = "Barbaro";
+                            CS = 93;
+                            AC = 65;
+                            DG = 15 + R.nextInt(30);
+                            break;
 
-                            case 3:
-                                personajjes = "Mago";
-                                CS = 101;
-                                AC = 20;
-                                DG = 5 + R.nextInt(10);
-                                break;
+                        case 3:
+                            personajjes = "Mago";
+                            CS = 101;
+                            AC = 20;
+                            DG = 5 + R.nextInt(10);
+                            break;
 
-                            case 4:
-                                personajjes = "Picaro";
-                                CS = 80;
-                                AC = 50;
-                                DG = 15 + R.nextInt(25);
-                                break;
-                            default:
-                                System.out.println(" Opcion incorrecta");
-                                System.out.println();
-                                break;
+                        case 4:
+                            personajjes = "Picaro";
+                            CS = 80;
+                            AC = 50;
+                            DG = 15 + R.nextInt(25);
+                            break;
+                        default:
+                            System.out.println(" Opcion incorrecta");
+                            System.out.println();
+                            break;
 
-                        }
-                    
+                    }
 
                     System.out.print(" Ingrese nombre: ");
                     String nombre = leer.next();
@@ -201,8 +199,32 @@ public class Lab2_JudaPonce {
                             int posicion = leer.nextInt();
 
                             if (personajes.get(posicion) instanceof Personajes) {
-                                System.out.print(" Ingrese nuevo tipo de personaje: ");
-                                newPersonaje = leer.next();
+                                System.out.println(" Ingrese nuevo tipo de personaje: ");
+                                System.out.println(" 1. clerigo");
+                                System.out.println(" 2. barbaro");
+                                System.out.println(" 3. mago ");
+                                System.out.println(" 4. picaro");
+                                int oppp = leer.nextInt();
+                                switch (oppp) {
+                                    case 1:
+                                        newPersonaje = "Clerigo";
+                                        break;
+
+                                    case 2:
+                                        newPersonaje = "Barbaro";
+                                        break;
+
+                                    case 3:
+                                        newPersonaje = "Mago";
+                                        break;
+
+                                    case 4:
+                                        newPersonaje = "Picaro";
+                                        break;
+                                    default:
+                                        throw new AssertionError(" Error al modificar opcion incorrecta");
+                                }
+
                                 System.out.println();
                                 ((Personajes) personajes.get(posicion)).setPersonaje(newPersonaje);
                                 System.out.println(" Tipo de personaje ha sido modificado con exito");
@@ -235,13 +257,42 @@ public class Lab2_JudaPonce {
 
                         case 3:
                             System.out.println(" Opcion modificar: Raza de personaje");
-                            String newRaza;
+                            String newRaza = null;
                             System.out.print(" Ingrese posicion donde desea modificar: ");
                             int posici = leer.nextInt();
 
                             if (personajes.get(posici) instanceof Personajes) {
-                                System.out.print(" Ingrese nueva estatura de personaje: ");
-                                newRaza = leer.next();
+                                System.out.println(" Ingrese nueva estatura de personaje: ");
+                                System.out.println(" 1. Mediano");
+                                System.out.println(" 2. Eano");
+                                System.out.println(" 3. Efo");
+                                System.out.println(" 4. Humano");
+                                int opcioon = leer.nextInt();
+                                switch (opcioon) {
+                                    case 1:
+                                        newRaza = " Mediano ";
+
+                                        break;
+
+                                    case 2:
+                                        newRaza = " Enano ";
+
+                                        break;
+
+                                    case 3:
+                                        newRaza = " Elfo ";
+
+                                        break;
+
+                                    case 4:
+                                        newRaza = " Humano ";
+
+                                        break;
+                                    default:
+                                        System.out.println(" Opcion incorrecta");
+                                        System.out.println();
+                                }
+
                                 System.out.println();
                                 ((Personajes) personajes.get(posici)).setRaza(newRaza);
                                 System.out.println(" Raza de personaje ha sido modificado con exito");
@@ -331,12 +382,40 @@ public class Lab2_JudaPonce {
 
                         case 8:
                             System.out.println(" Opcion modificar: Ncionalidad de personaje");
-                            String newNacionalidad;
+                            String newNacionalidad = "";
                             System.out.print(" Ingrese posicion donde desea modificar: ");
                             int positionn = leer.nextInt();
                             if (personajes.get(positionn) instanceof Personajes) {
-                                System.out.print(" Ingrese nueva nacionalidad de personaje: ");
-                                newNacionalidad = leer.next();
+                                System.out.println(" Ingrese nueva nacionalidad de personaje: ");
+                                System.out.println(" 1. Norfair");
+                                System.out.println(" 2. Brinstar");
+                                System.out.println(" 3. Maridia");
+                                System.out.println(" 4. Zebes ");
+                                System.out.println(" 5. Crateria");
+                                int oPtion = leer.nextInt();
+                                switch (oPtion) {
+                                    case 1:
+                                        newNacionalidad = " Nosfair";
+                                        break;
+
+                                    case 2:
+                                        newNacionalidad = " Brinstar";
+                                        break;
+
+                                    case 3:
+                                        newNacionalidad = " Meridia";
+                                        break;
+                                    case 4:
+                                        newNacionalidad = " Zebes";
+                                        break;
+
+                                    case 5:
+                                        newNacionalidad = " Crateria";
+                                        break;
+                                    default:
+                                        System.out.println(" Opcion Incorrecta");
+                                        System.out.println();
+                                }
                                 System.out.println();
                                 ((Personajes) personajes.get(positionn)).setNacionalidad(newNacionalidad);
                                 System.out.println(" Nacionalidad de personaje ha sido modificado con exito");
@@ -384,6 +463,52 @@ public class Lab2_JudaPonce {
                     personajes.remove(posicion);
                     System.out.println(" Personaje eliminado con exito ");
                     System.out.println();
+
+                    break;
+
+                case 5:
+                    String ends = "";
+                    for (Object o : personajes) {
+                        if (o instanceof Personajes) {
+                            ends += " [" + personajes.indexOf(o) + "] " + o + "\n";
+
+                        }
+
+                    }
+                    System.out.println(ends);
+                    int jugador,
+                     maquina;
+                    System.out.println(" Escoja la posicion del jugador que quiere usar");
+                    jugador = leer.nextInt();
+                    System.out.println(" Los aspectos jugables del jugador: " + jugador + " son: ");
+                    System.out.println("Hit points= " + personajes.get(jugador).getHP() + " Citric Strike = " + personajes.get(jugador).getCS() + " Armor Class = " + personajes.get(jugador).getAC() + " Damage = " + personajes.get(jugador).getDG());
+                    maquina = 0 + R.nextInt(personajes.size());
+                    System.out.println(" La maquina ha escogido al jugador: " + maquina);
+                    while (jugador == maquina) {
+                        System.out.println(" No pueden enfrentarse entre el mismo");
+                        maquina = 0 + R.nextInt(personajes.size());
+                        System.out.println(" La maquina ha escogido al jugador: " + maquina);
+                    }
+                    System.out.println("Hit points= " + personajes.get(maquina).getHP() + " Citric Strike = " + personajes.get(maquina).getCS() + " Armor Class = " + personajes.get(maquina).getAC() + " Damage = " + personajes.get(maquina).getDG());
+                    System.out.print(" Escoja si quiere atacar o defender");
+                    int atacar = leer.nextInt();
+                    switch (atacar) {
+
+                        case 1:
+                            System.out.println(" Modo: ATAQUE");
+                            int ataque;
+                            ataque=1+R.nextInt(100);
+                            if (ataque> AC) {
+                                
+                            }
+                            break;
+
+                        case 2:
+                            System.out.println(" Modo: DEFENSA");
+                            break;
+                        default:
+                            throw new AssertionError();
+                    }
 
                     break;
                 default:
