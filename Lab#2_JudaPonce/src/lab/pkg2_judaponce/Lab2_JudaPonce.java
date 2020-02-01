@@ -492,7 +492,7 @@ public class Lab2_JudaPonce {
                     
                     System.out.println("Hit points= " + personajes.get(maquina).getHP() + " Citric Strike = " + personajes.get(maquina).getCS() + " Armor Class = " + personajes.get(maquina).getAC() + " Damage = " + personajes.get(maquina).getDG());
                     boolean juego=false;
-                    while (juego) {=
+                    while (juego) {
                         
                     
                     System.out.print(" Escoja si quiere 1.atacar o 2.defender");
@@ -534,4 +534,4 @@ public class Lab2_JudaPonce {
 
     }
 
-}
+
