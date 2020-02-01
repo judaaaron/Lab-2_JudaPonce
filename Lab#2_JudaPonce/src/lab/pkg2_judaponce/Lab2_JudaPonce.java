@@ -489,42 +489,41 @@ public class Lab2_JudaPonce {
                         maquina = 0 + R.nextInt(personajes.size());
                         System.out.println(" La maquina ha escogido al jugador: " + maquina);
                     }
-
+                    
                     System.out.println("Hit points= " + personajes.get(maquina).getHP() + " Citric Strike = " + personajes.get(maquina).getCS() + " Armor Class = " + personajes.get(maquina).getAC() + " Damage = " + personajes.get(maquina).getDG());
-                    boolean juego = false;
-                    while (juego) {
-
-                        System.out.print(" Escoja si quiere 1.atacar o 2.defender");
-                        int atacar = leer.nextInt();
-                        switch (atacar) {
-
-                            case 1:
-                                int ataque = 1 + R.nextInt(100);
-                                if (ataque > personajes.get(maquina).getAC()) {
-                                    if (ataque > personajes.get(maquina).getCS()) {
-                                        personajes.get(maquina).setHP(personajes.get(maquina).getHP() - (2 * ataque));
-                                    }
-                                        personajes.get(maquina).setHP(personajes.get(maquina).getHP() - (ataque));
-                                }else
-
-                                break;
-
-                            case 2:
-                                System.out.println(" Modo: DEFENSA");
-                                
-                                
-                                break;
-                            default:
-                                System.out.println("");
-                        
-
+                    boolean juego=false;
+                    while (juego) {=
                         
                     
-                        }
-        
-    
+                    System.out.print(" Escoja si quiere 1.atacar o 2.defender");
+                    int atacar = leer.nextInt();
+                    switch (atacar) {
 
+                        case 1:
+                           int ataque=1+R.nextInt(100);
+                            if (ataque> personajes.get(maquina).getAC()) {
+                                if (ataque> personajes.get(maquina).getCS()) {
+                                  personajes.get(maquina).setHP( personajes.get(maquina).getHP()-(2*ataque));
+                                }
+                            }
+                           
 
+                            break;
+
+                        case 2:
+                            System.out.println(" Modo: DEFENSA");
+                            break;
+                        default:
+                            throw new AssertionError();
+                    }
+                    }
+                    
+                case 6:
+                    System.exit(6);
+                    break;
+
+                    
+                default:
                     System.out.println(" Opcion Incorrecta");
                     System.out.println();
                     }
